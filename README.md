@@ -20,10 +20,7 @@ Find and set your Firefox profile folder, for example
 firefoxProfile = r'C:\Users\Jesse\AppData\Roaming\Mozilla\Firefox\Profiles\7yr6lvv1.default-release'
 
 ## Prerequisites
-Python
-Firefox
-Selenium
-geckodriver
+Python, Firefox, Selenium, geckodriver
 
 ## License
 This project is licensed under the Apache License, Version 2.0. See the LICENSE file for details.
