@@ -108,11 +108,11 @@ def main():
 			driver.quit()
 			driver = None
 			tempRows = tempData.split('\n')
-			lastTempRow = len(tempRows) - 1
+			lastTempRow = len(tempRows)
 			tempContent = '<html><head><title>'
-			if lastTempRow >= 0:
-				if lastTempRow >= 1:
-					tempContent += '(' + str(lastTempRow + 1) + ') New ' + thisName + ' videos</title><style>'
+			if tempData != '':
+				if lastTempRow > 1:
+					tempContent += '(' + str(lastTempRow) + ') New ' + thisName + ' videos</title><style>'
 				else:
 					tempContent += '(1) New ' + thisName + ' video</title><style>'
 				tempContent += 'body{background-color:#75d864;}'	
@@ -125,7 +125,7 @@ def main():
 				tempContent += '</style></head><body>'
 				tempContent += '<h1><u>New videos:</u></h1><table>'
 				theAddress = 'https://www.youtube.com/'
-				for tempRow in range(lastTempRow + 1):
+				for tempRow in range(lastTempRow):
 					tempVals = tempRows[tempRow].split('\t')
 					videoId = tempVals[2].replace(theAddress + 'watch?v=', '')
 					if theAddress + 'shorts/' in videoId:
